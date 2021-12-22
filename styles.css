@@ -54,3 +54,33 @@ margin:70px 0px 70px 140px;
 .orangebox{
     background-color: rgb(238, 200, 131);
 }
+
+
+.buttons{
+    width: 100%;
+    height: auto;
+
+}
+button{
+   width: 150px;
+   height: 50px;
+margin-left: 300px;
+margin-top: 8px;
+margin-bottom: 8px;
+font-size: 17px;
+text-align:center;
+font-weight: 200;
+padding: 8px;
+/* align-items: center; */
+display: flex;
+flex-wrap: wrap;
+background-color: rgba(100, 95, 95, 0.3);
+opacity: 0.8;
+color: black;
+}
+
+
+.circle{
+    border-radius: 50%;
+    background-color: black !important;
+}

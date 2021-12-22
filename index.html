@@ -9,7 +9,6 @@
 </head>
 <body>
     
-<h1> boxes.. </h1>
 <div class="cotainer" >
     <ul class="allbox">
         <li class="bluebox boxs" id="ibox"> 1 </li>
@@ -21,7 +20,18 @@
         <li class="brownbox boxs"  id="viibox"> 7 </li>
         <li class="orangebox boxs" id="viiibox"> 8 </li>
     </ul>
+
+
+   <div class="buttons" >
+        <button class="btn-circle">     Circle & black        </button>
+        <button class="btn-rest">  Reset Color           </button>
+        <button class="btn-toggle">    Toggle         </button>
+    </div>
+
+
+
 </div>
+
 
 <script>
     // get idName element
@@ -54,6 +64,35 @@ for (const oneelement of queryboxes){
     });
 }
 
+
+// to second task..
+// Add class ...........>>>>>>>>>>>
+const circlebtn = document.querySelector(".btn-circle")
+const allboxes =document.querySelectorAll(".boxs")
+circlebtn.addEventListener("click" , function(){
+    for(const element of allboxes){
+        element.classList.add("circle")
+    }
+})
+
+// to remove class ..............>>>>>>
+const restbtn = document.querySelector(".btn-rest")
+restbtn.addEventListener("click", function(){
+    for(const element of allboxes){
+        element.classList.remove("circle")
+    }
+    console.log(box1.classList.contains("circle"));
+
+})
+
+var togglebtn = document.querySelector(".btn-toggle")
+togglebtn.addEventListener("click" , function(){
+    for(const element of allboxes){
+        element.classList.toggle("circle")
+    }
+    // use <<contains>> to box num "2"
+        console.log(box1.classList.contains("circle"));
+})
 </script>
 
 
