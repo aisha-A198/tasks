@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+
+<div class="cotainer" >
+    <ul class="allbox">
+        <li class="bluebox boxs" id="ibox"> 1 </li>
+        <li class="redbox boxs" id="iibox"> 2 </li>
+        <li class="greenbox boxs" id="iiibox"> 3 </li>
+        <li class="pinkbox boxs" id="ivbox"> 4 </li> <br>
+        <li class="blackbox boxs" id="vbox"> 5 </li>
+        <li class="purplebox boxs" id="vibox"> 6 </li>
+        <li class="brownbox boxs"  id="viibox"> 7 </li>
+        <li class="orangebox boxs" id="viiibox"> 8 </li>
+    </ul>
+</div>
+
+<script>
+    // get idName element
+    const box1 = document.getElementById("iibox");
+    box1.addEventListener("click" , function(event){
+        event.target.style.backgroundColor="blue";
+        event.target.style.color="black";
+    });
+//    get className element
+    const boxes= document.getElementsByClassName("boxs");
+    for(const groupbox of boxes) {
+        groupbox.addEventListener("click" , function(event){
+            event.target.style.backgroundColor="violet";
+            event.target.style.color="red";
+        });
+    }
+
+// get selector with id
+
+const querybox= document.querySelector("#viibox");
+querybox.addEventListener("click" , function(event){
+    event.target.style.backgroundColor="black";
+    
+});
+
+const queryboxes = document.querySelectorAll(".orangebox");
+for (const oneelement of queryboxes){
+    oneelement.addEventListener("click" , function(event){
+        event.target.style.backgroundColor="orange" ;
+    });
+}
+
+</script>
+
+
+</body>
+</html>
