@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .container-for-timer{
+            width: 50%;
+            height: auto;
+            background-color: palevioletred;
+            /* align-items: center; */
+            margin: 250px 100px 50px 200px;
+            text-align: center;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+
+<div class="container-for-timer">
+<h1> Timer </h1>
+<h1 id="timerclock"> 0:00 </h1>
+<button id="start"> start </button>
+<button id="reset"> Reset </button>
+</div>
+
+
+
+
+
+<script>
+//variable
+let time = 0 ;
+let timerId = 0;
+let timerOut = true ;
+
+
+
+//element
+const start = document.querySelector("#start");
+const reset = document.querySelector("#reset");
+const timer = document.querySelector("#timerclock");
+
+    const initClock= () => {
+    timerOut = false ;
+    timerId = setInterval(() => {
+        time++;
+        timerCount();
+    }, 1000);
+
+    } ;
+
+
+   const timerCount =() => {
+       const min = Math.floor(time/60) ;
+       const sec = time % 60 ;
+       if (sec < 10 )  {
+           timer.innerHTML = `${min}:0${sec}`;
+       } else {
+        timer.innerHTML = `${min}:${sec}`;
+       }
+   } ;
+
+
+
+    const stopClock= () => {
+        clearInterval(timerId);
+    };
+
+
+    //event
+    start.addEventListener("click" , function(){
+        if (timerOut) {
+            initClock();
+        }
+        
+    });
+
+
+
+    reset.addEventListener("click" , function(){
+        stopClock();
+        timerOut= true;
+        time =0 ;
+        timerCount() ;
+    });
+</script>
+
+</body>
+</html>
